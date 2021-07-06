@@ -1,5 +1,6 @@
 import 'package:flingex_app/screens/login/login_page.dart';
 import 'package:flutter/material.dart';
+import 'screens/signup/signup_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         // '/': (context) => Splash(),
         '/': (context) => LoginPage(),
-        // '/signup': (context) => SignupPage(),
+        '/signup': (context) => SignupPage(),
         // '/home': (context) => HomePage(),
       },
     );

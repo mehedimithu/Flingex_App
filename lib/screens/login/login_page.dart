@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:flingex_app/screens/signup/signup_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -16,7 +16,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -245,10 +244,10 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: size.height * 0.02),
                       GestureDetector(
                         onTap: () => {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => RegisterScreen()))
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignupPage()))
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
