@@ -20,25 +20,22 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Container(
-            margin: EdgeInsets.only(top: 60),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                alignment: Alignment.topCenter,
-                image: AssetImage('assets/images/logo.png'),
-              ),
-            ),
-          ),
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(15.0),
             child: ListView(
               children: <Widget>[
                 Container(
                   alignment: Alignment.center,
-                  padding: EdgeInsets.symmetric(vertical: 50),
-                  margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                   child: Column(
                     children: [
+                      Container(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                          height: size.height * .12,
+                          width: size.width * 1.011,
+                        ),
+                      ),
                       Container(
                         alignment: Alignment.center,
                         margin: EdgeInsets.all(5),
@@ -48,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: size.width * 1.011,
                         ),
                       ),
-                      SizedBox(height: size.height * 0.03),
+                      SizedBox(height: size.height * 0.02),
                       Text(
                         "Welcome Back John!",
                         style: TextStyle(
@@ -68,6 +65,8 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
+                SizedBox(height: size.height * 0.03),
+
                 Container(
                   width: 384,
                   height: 420,
