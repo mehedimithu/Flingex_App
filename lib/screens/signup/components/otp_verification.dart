@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'otp_code.dart';
+
 class OtpVerification extends StatefulWidget {
   @override
   _OtpVerificationState createState() => _OtpVerificationState();
@@ -8,6 +10,86 @@ class OtpVerification extends StatefulWidget {
 
 class _OtpVerificationState extends State<OtpVerification> {
   TextEditingController phoneController = TextEditingController();
+
+  void _showMessage() {
+    showDialog(
+      context: context, barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Have you not receive Verification Codes OTP?',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: [
+                Text(
+                    'An authentication code has been sent to (+880) 1719 123 123',
+                    textAlign: TextAlign.center),
+              ],
+            ),
+          ),
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 10.0, right: 10.0, top: 10, bottom: 5),
+                    child: Container(
+                      width: 148,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: Color(0xffe6f4ff),
+                      ),
+                      child: FlatButton(
+                        child: Text(
+                          'Cancel',
+                          textAlign: TextAlign.center,
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 10.0, right: 10.0, top: 10, bottom: 5),
+                    child: Container(
+                      width: 148,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: Color(0xff2162af),
+                      ),
+                      child: FlatButton(
+                        child: Text(
+                          'Call',
+                          textAlign: TextAlign.center,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => OtpCode()));
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,12 +207,8 @@ class _OtpVerificationState extends State<OtpVerification> {
                   ),
                   SizedBox(height: size.height * 0.03),
                   RaisedButton(
-                    onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => OtpVerification()));
-                    },
+                    onPressed: _showMessage,
+                    color: Colors.blueAccent,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6)),
                     textColor: Colors.white,
