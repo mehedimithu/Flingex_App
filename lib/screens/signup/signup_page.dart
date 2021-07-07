@@ -1,6 +1,8 @@
 import 'package:flingex_app/screens/login/login_page.dart';
 import 'package:flutter/material.dart';
 
+import 'components/otp_verification.dart';
+
 class SignupPage extends StatefulWidget {
   @override
   _SignupPageState createState() => _SignupPageState();
@@ -234,7 +236,7 @@ class _SignupPageState extends State<SignupPage> {
                             child: CheckboxListTile(
                               controlAffinity: ListTileControlAffinity.leading,
                               title: Text(
-                                "By creating an account you aggree to our terms of service and privacy policy.",
+                                "By creating an account you agree to our terms of service and privacy policy.",
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 10,
                                 style: TextStyle(
@@ -257,13 +259,10 @@ class _SignupPageState extends State<SignupPage> {
                       SizedBox(height: size.height * 0.01),
                       RaisedButton(
                         onPressed: () {
-                          // _onFormSubmitted();
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => HomePage(
-                          //               size: MediaQuery.of(context).size,
-                          //             )));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => OtpVerification()));
                         },
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6)),
@@ -316,12 +315,12 @@ class _SignupPageState extends State<SignupPage> {
                           ],
                         ),
                       ),
-
                     ],
                   ),
                   SizedBox(height: size.height * 0.02),
                   Text(
-                    "Powered by : Real Time Solution Software", textAlign: TextAlign.center,
+                    "Powered by : Real Time Solution Software",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color(0xff194a83),
                       fontSize: 12,
