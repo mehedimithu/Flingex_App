@@ -247,7 +247,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignupPage()))
+                                  builder: (context) => SignupPage())),
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -272,7 +272,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: size.height * 0.01),
                       Text(
-                        "Powered by: Real Time Solution Software",
+                        "Powered by : Real Time Solution Software", textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xff194a83),
                           fontSize: 12,
