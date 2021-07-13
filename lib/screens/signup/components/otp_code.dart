@@ -1,3 +1,4 @@
+import 'package:flingex_app/screens/signup/components/location.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -223,7 +224,10 @@ class _OtpCodeState extends State<OtpCode> {
                   ),
                   SizedBox(height: size.height * 0.03),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SelectLocation()));},
                     color: Colors.blueAccent,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6)),
@@ -254,7 +258,7 @@ class _OtpCodeState extends State<OtpCode> {
           ),
           SizedBox(height: size.height * 0.02),
           Text(
-            "Powered by : Real Time Solution Software",
+            "© 2021 Flingex. All rights reserved.\nDeveloped by Evertech IT",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Color(0xff194a83),
